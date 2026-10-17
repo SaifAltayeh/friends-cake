@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #071b43;
+  --navy-deep: #06132f;
+  --navy-soft: #12305f;
+  --ivory: #ffffff;
+  --ivory-dark: #f4f4f4;
+  --white: #ffffff;
+  --mist: #e9e9e6;
+  --slate: #a7b3c5;
+  --ink: #1c2433;
+  --ink-soft: #5c6573;
+  --line: rgba(7, 27, 67, 0.12);
+  --focus: #071b43;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-soft: var(--navy-soft);
+  --color-ivory: var(--ivory);
+  --color-ivory-dark: var(--ivory-dark);
+  --color-mist: var(--mist);
+  --color-slate: var(--slate);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --font-sans: var(--font-satoshi);
+  --font-serif: var(--font-satoshi);
+  --radius-sm: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-satoshi), system-ui, sans-serif;
+  font-feature-settings: "ss01" on, "kern" on;
+  text-rendering: optimizeLegibility;
+  min-height: 100%;
+}
+
+::selection {
+  background: var(--navy);
+  color: var(--ivory);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-satoshi), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.kicker {
+  font-family: var(--font-satoshi), system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.pattern-navy {
+  background-color: var(--navy);
+  background-image: url("/brand/pattern-tile.png");
+  background-size: 280px;
+  background-blend-mode: soft-light;
+}
+
+.pattern-soft {
+  background-image: url("/brand/pattern-tile.png");
+  background-size: 420px;
+  opacity: 0.07;
+}
+
+.hairline {
+  height: 1px;
+  background: var(--line);
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input[type="date"],
+input[type="time"] {
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
