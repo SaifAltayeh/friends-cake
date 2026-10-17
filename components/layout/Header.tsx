@@ -17,7 +17,7 @@ export function Header() {
   return (
     <header className="bg-ivory/95 backdrop-blur-md">
       <div className={`${siteWrap} flex items-center justify-between gap-2 py-3 sm:gap-4 sm:py-4`}>
-        <Link href="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3" aria-label="Friends Cake home">
+        <Link href="/" scroll={false} className="flex min-w-0 items-center gap-2.5 sm:gap-3" aria-label="Friends Cake home">
           <span className="relative block h-10 w-10 shrink-0 overflow-hidden bg-navy sm:h-11 sm:w-11">
             <Image
               src="/brand/logo-plate.png"
@@ -45,6 +45,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                scroll={false}
                 className={cn(
                   "text-[0.68rem] tracking-[0.2em] uppercase transition-colors",
                   active || shopActive ? "text-navy" : "text-ink-soft hover:text-navy",
@@ -65,11 +66,12 @@ export function Header() {
           >
             <Search size={18} />
           </button>
-          <Link href="/account" className="grid h-10 w-10 place-items-center sm:h-11 sm:w-11" aria-label="Account">
+          <Link href="/account" scroll={false} className="grid h-10 w-10 place-items-center sm:h-11 sm:w-11" aria-label="Account">
             <User size={18} />
           </Link>
           <Link
             href="/cart"
+            scroll={false}
             className="relative grid h-10 w-10 place-items-center sm:h-11 sm:w-11"
             aria-label={`Cart, ${count} items`}
           >

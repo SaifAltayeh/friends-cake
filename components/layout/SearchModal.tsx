@@ -180,6 +180,7 @@ export function SearchModal() {
                     <li key={product.id} className="h-[4.5rem]">
                       <Link
                         href={`/product/${product.slug}`}
+                        scroll={false}
                         onClick={closeSearch}
                         className="flex h-full items-center gap-3 px-0 py-0 sm:gap-4"
                       >

@@ -13,13 +13,13 @@ export function CartItemRow({ item }: { item: CartItem }) {
 
   return (
     <article className="flex gap-3 border-b border-navy/10 py-5 sm:gap-4">
-      <Link href={`/product/${item.slug}`} className="relative h-20 w-16 shrink-0 overflow-hidden bg-mist sm:h-24 sm:w-20">
+      <Link href={`/product/${item.slug}`} scroll={false} className="relative h-20 w-16 shrink-0 overflow-hidden bg-mist sm:h-24 sm:w-20">
         <Image src={item.image} alt={item.name} fill className="object-cover" />
       </Link>
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <Link href={`/product/${item.slug}`} className="font-serif text-lg text-navy sm:text-xl">
+            <Link href={`/product/${item.slug}`} scroll={false} className="font-serif text-lg text-navy sm:text-xl">
               {item.name}
             </Link>
             {config ? (

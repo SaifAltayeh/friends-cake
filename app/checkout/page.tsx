@@ -5,7 +5,7 @@ import { Confirmation } from "@/components/checkout/Confirmation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { store } from "@/data/site";
 import { LoadingState } from "@/components/ui/LoadingState";
-import { siteWrap } from "@/lib/cn";
+import { pageWrap } from "@/lib/cn";
 
 export const metadata: Metadata = { title: "Checkout" };
 
@@ -13,7 +13,7 @@ type Search = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export default function CheckoutPage({ searchParams }: { searchParams: Search }) {
   return (
-    <div className={`${siteWrap} py-8 md:py-16`}>
+    <div className={pageWrap}>
       <Suspense fallback={<LoadingState label="Preparing checkout" />}>
         <CheckoutContent searchParams={searchParams} />
       </Suspense>

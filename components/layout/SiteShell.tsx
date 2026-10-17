@@ -27,7 +27,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <ToastStack />
       <main
         id="main-content"
-        className="flex-1 pt-[calc(8.75rem+env(safe-area-inset-top))] has-[#cake-journey]:pt-0 has-[#page-hero]:pt-0 lg:pt-36"
+        className="flex-1"
       >
         {children}
       </main>

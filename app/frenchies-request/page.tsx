@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { frenchiesContent } from "@/data/frenchies";
 import { FrenchiesForm } from "@/components/forms/FrenchiesForm";
-import { siteWrap } from "@/lib/cn";
+import { pageWrap } from "@/lib/cn";
 
 export const metadata: Metadata = { title: "Frenchies Request" };
 
 export default function FrenchiesPage() {
   return (
-    <div className={`${siteWrap} pb-20 pt-6 md:pb-36 md:pt-12`}>
+    <div className={pageWrap}>
       <header className="max-w-3xl">
         <p className="text-[0.68rem] tracking-[0.28em] uppercase text-ink-soft">
           {frenchiesContent.kicker}

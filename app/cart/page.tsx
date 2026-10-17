@@ -6,13 +6,13 @@ import { CartSummary } from "@/components/cart/CartSummary";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { siteWrap } from "@/lib/cn";
+import { pageWrap } from "@/lib/cn";
 
 export default function CartPage() {
   const { items, subtotal, total, clear } = useCart();
 
   return (
-    <div className={`${siteWrap} py-8 md:py-16`}>
+    <div className={`${pageWrap} md:pb-16`}>
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Cart" }]} />
       <h1 className="mt-6 font-serif text-4xl text-navy md:mt-8 md:text-5xl">Cart</h1>
       {items.length === 0 ? (

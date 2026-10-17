@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="border-t border-navy/10 bg-white text-navy">
       <div className={`${siteWrap} grid gap-10 py-14 md:grid-cols-12 md:gap-12 md:py-24`}>
         <div className="md:col-span-4">
-          <Link href="/" className="inline-flex items-center gap-3">
+          <Link href="/" scroll={false} className="inline-flex items-center gap-3">
             <span className="relative block h-11 w-11 overflow-hidden bg-navy">
               <Image
                 src="/brand/logo-plate.png"
@@ -31,7 +31,7 @@ export function Footer() {
           <ul className="mt-5 space-y-2.5 text-sm">
             {footerNav.shop.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-navy transition-opacity hover:opacity-55">
+                <Link href={item.href} scroll={false} className="text-navy transition-opacity hover:opacity-55">
                   {item.label}
                 </Link>
               </li>
@@ -44,7 +44,7 @@ export function Footer() {
           <ul className="mt-5 space-y-2.5 text-sm">
             {footerNav.atelier.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-navy transition-opacity hover:opacity-55">
+                <Link href={item.href} scroll={false} className="text-navy transition-opacity hover:opacity-55">
                   {item.label}
                 </Link>
               </li>
@@ -82,7 +82,7 @@ export function Footer() {
               </a>
             ))}
             {footerNav.legal.map((item) => (
-              <Link key={item.href} href={item.href} className="transition-opacity hover:text-navy">
+              <Link key={item.href} href={item.href} scroll={false} className="transition-opacity hover:text-navy">
                 {item.label}
               </Link>
             ))}

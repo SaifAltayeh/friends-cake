@@ -22,6 +22,7 @@ export function CategorySection() {
           </div>
           <Link
             href="/categories"
+            scroll={false}
             className="inline-flex items-center gap-1.5 text-sm text-navy underline decoration-navy/40 underline-offset-4 transition-colors hover:decoration-navy"
           >
             View all

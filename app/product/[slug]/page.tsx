@@ -5,7 +5,7 @@ import { categories } from "@/data/categories";
 import { ProductDetails } from "@/components/products/ProductDetails";
 import { RelatedProducts } from "@/components/products/RelatedProducts";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { siteWrap } from "@/lib/cn";
+import { pageWrap } from "@/lib/cn";
 
 export async function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -30,7 +30,7 @@ export default async function ProductPage({ params }: { params: Params }) {
   const category = categories.find((item) => item.slug === product.category);
 
   return (
-    <div className={`${siteWrap} py-8 md:py-16`}>
+    <div className={pageWrap}>
       <Breadcrumbs
         items={[
           { href: "/", label: "Home" },

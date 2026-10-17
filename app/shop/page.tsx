@@ -4,7 +4,7 @@ import Link from "next/link";
 import { products } from "@/data/products";
 import { ProductListing } from "@/components/products/ProductListing";
 import { LoadingState } from "@/components/ui/LoadingState";
-import { cn, siteWrap } from "@/lib/cn";
+import { cn, pageWrap } from "@/lib/cn";
 
 export const metadata: Metadata = {
   title: "Shop",
@@ -32,7 +32,7 @@ const views = {
 
 export default function ShopPage({ searchParams }: { searchParams: Search }) {
   return (
-    <div className={`${siteWrap} pb-20 pt-6 md:pb-36 md:pt-12`}>
+    <div className={pageWrap}>
       <Suspense fallback={<LoadingState label="Opening the catalogue" />}>
         <ShopContent searchParams={searchParams} />
       </Suspense>
@@ -91,6 +91,7 @@ function ViewLink({
   return (
     <Link
       href={href}
+      scroll={false}
       className={cn(
         "transition-colors",
         active

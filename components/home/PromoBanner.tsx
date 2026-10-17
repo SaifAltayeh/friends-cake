@@ -19,6 +19,7 @@ export function PromoBanner() {
           </p>
           <Link
             href="/category/custom-cakes"
+            scroll={false}
             className="mt-7 inline-flex items-center gap-1.5 text-sm text-navy underline decoration-navy/40 underline-offset-4 transition-colors hover:decoration-navy md:mt-10"
           >
             Begin a custom cake

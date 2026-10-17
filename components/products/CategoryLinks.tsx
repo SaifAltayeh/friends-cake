@@ -19,6 +19,7 @@ export function CategoryLinks({ active }: { active?: string }) {
     >
       <Link
         href="/shop"
+        scroll={false}
         className={cn(
           "transition-colors",
           !active
@@ -32,6 +33,7 @@ export function CategoryLinks({ active }: { active?: string }) {
         <Link
           key={item.slug}
           href={`/category/${item.slug}`}
+          scroll={false}
           className={cn(
             "transition-colors",
             active === item.slug

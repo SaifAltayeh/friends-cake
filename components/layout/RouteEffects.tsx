@@ -21,12 +21,27 @@ export function RouteEffects() {
     closeCart();
     closeMenu();
     closeSearch();
-    scrollToTop();
-    const frame = window.requestAnimationFrame(scrollToTop);
-    const timer = window.setTimeout(scrollToTop, 120);
+
+    let active = true;
+    const lock = () => {
+      if (active) scrollToTop();
+    };
+
+    lock();
+    const frame = window.requestAnimationFrame(() => {
+      lock();
+      window.requestAnimationFrame(lock);
+    });
+    const timers = [0, 32, 80, 160, 280, 450].map((delay) => window.setTimeout(lock, delay));
+    const stop = window.setTimeout(() => {
+      active = false;
+    }, 500);
+
     return () => {
+      active = false;
       window.cancelAnimationFrame(frame);
-      window.clearTimeout(timer);
+      timers.forEach((id) => window.clearTimeout(id));
+      window.clearTimeout(stop);
     };
   }, [pathname, closeCart, closeMenu, closeSearch]);
 

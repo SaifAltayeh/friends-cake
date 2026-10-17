@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Account" };
 
 export default function AccountPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-8 sm:py-16 lg:px-12">
+    <div className="mx-auto w-full max-w-3xl px-4 pb-16 pt-[calc(9.5rem+env(safe-area-inset-top))] sm:px-8 lg:px-12 lg:pt-44">
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Account" }]} />
       <h1 className="mt-6 font-serif text-4xl text-navy md:mt-8 md:text-5xl">Account</h1>
       <p className="mt-4 text-sm leading-relaxed text-ink-soft">

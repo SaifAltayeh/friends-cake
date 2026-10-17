@@ -17,7 +17,7 @@ export function ProductCard({
 
   return (
     <article className="group bg-white text-center">
-      <Link href={`/product/${product.slug}`} className="relative block bg-white">
+      <Link href={`/product/${product.slug}`} scroll={false} className="relative block bg-white">
         <div
           id={liveModel ? "cake-product-stage" : undefined}
           className="relative aspect-[4/3] bg-white"

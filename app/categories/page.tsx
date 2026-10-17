@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { categories } from "@/data/categories";
 import { CategoryCard } from "@/components/products/CategoryCard";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { siteWrap } from "@/lib/cn";
+import { pageWrap } from "@/lib/cn";
 
 export const metadata: Metadata = {
   title: "Categories",
@@ -12,7 +12,7 @@ export default function CategoriesPage() {
   const featured = categories.slice(0, 3);
 
   return (
-    <div className={`${siteWrap} py-8 md:py-16`}>
+    <div className={pageWrap}>
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Categories" }]} />
       <p className="kicker mt-6 md:mt-8">The collections</p>
       <h1 className="mt-3 font-serif text-4xl text-navy md:text-6xl">Categories</h1>

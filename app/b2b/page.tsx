@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { b2bContent } from "@/data/b2b";
 import { B2BForm } from "@/components/forms/B2BForm";
-import { siteWrap } from "@/lib/cn";
+import { pageWrap } from "@/lib/cn";
 
 export const metadata: Metadata = { title: "B2B" };
 
 export default function B2BPage() {
   return (
-    <div className={`${siteWrap} pb-20 pt-6 md:pb-36 md:pt-12`}>
+    <div className={pageWrap}>
       <header className="max-w-3xl">
         <p className="text-[0.68rem] tracking-[0.28em] uppercase text-ink-soft">
           {b2bContent.kicker}

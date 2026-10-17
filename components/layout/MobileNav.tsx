@@ -56,6 +56,7 @@ export function MobileNav() {
               >
                 <Link
                   href={item.href}
+                  scroll={false}
                   onClick={closeMenu}
                   className="block py-2.5 font-serif text-[2.35rem] leading-[1.05] tracking-[-0.03em]"
                 >

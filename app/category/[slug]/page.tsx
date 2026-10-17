@@ -5,7 +5,7 @@ import { getProductsByCategory } from "@/data/products";
 import { ProductListing } from "@/components/products/ProductListing";
 import { CategoryLinks } from "@/components/products/CategoryLinks";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { siteWrap } from "@/lib/cn";
+import { pageWrap } from "@/lib/cn";
 
 export async function generateStaticParams() {
   return categories.map((category) => ({ slug: category.slug }));
@@ -30,7 +30,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
   const list = getProductsByCategory(slug);
 
   return (
-    <div className={`${siteWrap} pb-20 pt-6 md:pb-36 md:pt-12`}>
+    <div className={pageWrap}>
       <Breadcrumbs
         items={[
           { href: "/", label: "Home" },

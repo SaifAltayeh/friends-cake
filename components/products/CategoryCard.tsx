@@ -5,7 +5,7 @@ import type { Category } from "@/types/product";
 
 export function CategoryCard({ category }: { category: Category }) {
   return (
-    <Link href={`/category/${category.slug}`} className="group block">
+    <Link href={`/category/${category.slug}`} scroll={false} className="group block">
       <div className="relative aspect-[5/4] overflow-hidden bg-[#f7f7f7]">
         <Image
           src={category.image}

@@ -47,6 +47,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
+      scroll={false}
       className={cn(
         "inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.72rem] font-medium tracking-[0.18em] uppercase transition-colors duration-200",
         styles[variant],
