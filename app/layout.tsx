@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${satoshi.variable} h-full antialiased`}>
-      <body className="min-h-full bg-white font-sans text-ink">
+    <html lang="en" className={`${satoshi.variable} antialiased`}>
+      <body className="bg-white font-sans text-ink">
         <Providers>
           <SiteShell>{children}</SiteShell>
         </Providers>

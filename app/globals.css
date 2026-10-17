@@ -31,9 +31,18 @@
   --radius-sm: 2px;
 }
 
+html {
+  scroll-padding-top: calc(8.75rem + env(safe-area-inset-top, 0px));
+}
+
+#main-content > * {
+  scroll-margin-top: calc(8.75rem + env(safe-area-inset-top, 0px));
+}
+
 @media (min-width: 1024px) {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 9.5rem;
   }
 }
 

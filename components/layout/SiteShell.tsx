@@ -9,7 +9,7 @@ import { RouteEffects } from "@/components/layout/RouteEffects";
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-full flex-col">
+    <div className="flex min-h-dvh flex-col">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[90] focus:bg-navy focus:px-4 focus:py-2 focus:text-ivory"
@@ -27,7 +27,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <ToastStack />
       <main
         id="main-content"
-        className="flex-1 pt-[calc(7.25rem+env(safe-area-inset-top))] has-[#cake-journey]:pt-0 has-[#page-hero]:pt-0 sm:pt-28"
+        className="flex-1 pt-[calc(8.75rem+env(safe-area-inset-top))] has-[#cake-journey]:pt-0 has-[#page-hero]:pt-0 lg:pt-36"
       >
         {children}
       </main>
