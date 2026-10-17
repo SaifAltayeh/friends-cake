@@ -101,7 +101,7 @@ export function SearchModal() {
         <div className="fixed inset-0 z-[120]">
           <motion.button
             type="button"
-            className="absolute inset-0 bg-white/80 backdrop-blur-sm"
+            className="absolute inset-0 hidden bg-white/80 backdrop-blur-sm sm:block"
             aria-label="Close search"
             onClick={closeSearch}
             initial={{ opacity: 0 }}
@@ -112,14 +112,14 @@ export function SearchModal() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="search-title"
-            className="relative z-10 mx-auto mt-[calc(5.25rem+env(safe-area-inset-top))] w-[min(44rem,calc(100%-1rem))] bg-white px-4 py-5 ring-1 ring-navy/10 sm:mt-20 sm:px-8 sm:py-7 md:mt-28"
-            initial={{ y: 12, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 12, opacity: 0 }}
-            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-10 flex h-[100dvh] flex-col bg-white px-4 pt-[calc(1rem+env(safe-area-inset-top))] pb-[env(safe-area-inset-bottom)] sm:mx-auto sm:mt-[calc(5.25rem+env(safe-area-inset-top))] sm:h-auto sm:max-h-[min(40rem,calc(100dvh-7rem))] sm:w-[min(44rem,calc(100%-1.5rem))] sm:px-8 sm:py-7 sm:pt-7 sm:pb-7 sm:ring-1 sm:ring-navy/10 md:mt-28"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-center justify-between gap-6">
+            <div className="flex shrink-0 items-center justify-between gap-6">
               <div>
                 <p className="text-[0.68rem] tracking-[0.28em] uppercase text-ink-soft">
                   The catalogue
@@ -141,7 +141,7 @@ export function SearchModal() {
             <label htmlFor="site-search" className="sr-only">
               Search cakes
             </label>
-            <div className="mt-5 flex items-center gap-3 border-b border-navy/15 pb-3">
+            <div className="mt-5 flex shrink-0 items-center gap-3 border-b border-navy/15 pb-3">
               <Search size={18} strokeWidth={1.75} className="shrink-0 text-ink-soft" aria-hidden />
               <input
                 id="site-search"
@@ -149,26 +149,25 @@ export function SearchModal() {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search cakes, flavours, collections…"
-                className="w-full bg-transparent py-1.5 text-[1.05rem] text-ink outline-none placeholder:text-ink-soft/70"
+                className="min-w-0 flex-1 bg-transparent py-1.5 text-[1.05rem] text-ink outline-none placeholder:text-ink-soft/70"
               />
-              {trimmed ? (
-                <button
-                  type="button"
-                  onClick={() => setQuery("")}
-                  className="text-[0.68rem] tracking-[0.18em] uppercase text-ink-soft hover:text-navy"
-                >
-                  Clear
-                </button>
-              ) : null}
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                className="w-12 shrink-0 text-[0.68rem] tracking-[0.18em] uppercase text-ink-soft hover:text-navy disabled:invisible"
+                disabled={!trimmed}
+              >
+                Clear
+              </button>
             </div>
 
-            <p className="mt-6 text-[0.68rem] tracking-[0.22em] uppercase text-ink-soft">
+            <p className="mt-6 shrink-0 text-[0.68rem] tracking-[0.22em] uppercase text-ink-soft">
               {trimmed ? `${results.length} ${results.length === 1 ? "cake" : "cakes"}` : "From the atelier"}
             </p>
 
             <ul
               id="search-results"
-              className="mt-3 max-h-[min(28rem,calc(100svh-20rem))] space-y-1 overflow-y-auto overscroll-contain"
+              className="mt-3 min-h-0 flex-1 overflow-y-auto overscroll-contain sm:max-h-[min(28rem,calc(100dvh-22rem))]"
             >
               {results.length === 0 ? (
                 <li className="py-8 text-sm text-ink-soft">
@@ -178,18 +177,18 @@ export function SearchModal() {
                 results.map((product) => {
                   const collection = categories.find((item) => item.slug === product.category);
                   return (
-                    <li key={product.id}>
+                    <li key={product.id} className="h-[4.5rem]">
                       <Link
                         href={`/product/${product.slug}`}
                         onClick={closeSearch}
-                        className="-mx-2 flex items-center gap-4 px-2 py-2.5 transition-colors hover:bg-[#f7f7f7] sm:-mx-3 sm:px-3"
+                        className="flex h-full items-center gap-3 px-0 py-0 sm:gap-4"
                       >
-                        <span className="relative block h-14 w-14 shrink-0 overflow-hidden bg-[#f7f7f7] sm:h-16 sm:w-16">
+                        <span className="relative block h-14 w-14 shrink-0 overflow-hidden bg-[#f7f7f7]">
                           <Image
                             src={product.images[0]}
                             alt=""
                             fill
-                            sizes="64px"
+                            sizes="56px"
                             className="object-contain p-1.5"
                           />
                         </span>
@@ -201,7 +200,7 @@ export function SearchModal() {
                             {collection?.name ?? product.shortDescription}
                           </span>
                         </span>
-                        <span className="shrink-0 text-sm text-ink">
+                        <span className="w-16 shrink-0 text-right text-sm tabular-nums text-ink">
                           {formatPrice(product.price)}
                         </span>
                       </Link>
