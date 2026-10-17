@@ -292,8 +292,12 @@ export function CakeTheater() {
     });
     update();
 
+    let lastWidth = window.innerWidth;
     const onResize = () => {
+      const width = window.innerWidth;
       update();
+      if (Math.abs(width - lastWidth) < 2) return;
+      lastWidth = width;
       ScrollTrigger.refresh();
     };
     const onLoad = () => {
@@ -346,9 +350,13 @@ export function CakeTheater() {
               width: "100%",
               height: "100%",
               pointerEvents: "none",
+              touchAction: "pan-y",
             }}
-            onCreated={({ gl }) => {
+            onCreated={({ gl, events }) => {
               gl.setClearColor(0x000000, 0);
+              gl.domElement.style.pointerEvents = "none";
+              gl.domElement.style.touchAction = "pan-y";
+              events?.disconnect?.();
               setReady(true);
             }}
           >

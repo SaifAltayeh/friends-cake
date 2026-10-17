@@ -35,7 +35,7 @@ export function FilterPanel({
     <div className="flex flex-col gap-5 border-y border-navy/10 py-5 lg:flex-row lg:items-center lg:justify-between">
       {showCategories ? (
         <nav
-          className="-mx-4 flex gap-5 overflow-x-auto px-4 text-sm whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:gap-6 sm:px-0"
+          className="-mx-4 flex gap-5 overflow-x-auto px-4 text-sm whitespace-nowrap touch-pan-x [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:gap-6 sm:px-0"
           aria-label="Filter by collection"
         >
           <FilterLink active={category === "all"} onClick={() => onCategory("all")}>

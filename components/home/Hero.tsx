@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate min-h-[100svh] overflow-hidden bg-white text-navy"
+      className="relative isolate min-h-[100svh] overflow-x-hidden bg-white text-navy"
     >
       <div className="pointer-events-none absolute right-[8%] top-1/2 hidden h-[70vh] w-[46vw] -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(7,27,67,0.06),transparent_62%)] lg:block" />
 

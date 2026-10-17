@@ -31,8 +31,10 @@
   --radius-sm: 2px;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (min-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 html,
