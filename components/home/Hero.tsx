@@ -14,9 +14,9 @@ export function Hero() {
     >
       <div className="pointer-events-none absolute right-[8%] top-1/2 hidden h-[70vh] w-[46vw] -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(7,27,67,0.06),transparent_62%)] lg:block" />
 
-      <div className={`${siteWrap} relative z-30 flex min-h-[100svh] flex-col lg:grid lg:grid-cols-12 lg:items-center`}>
+      <div className={`${siteWrap} relative z-30 flex h-[100svh] min-h-[100svh] flex-col lg:grid lg:h-auto lg:min-h-[100svh] lg:grid-cols-12 lg:items-center`}>
         <motion.div
-          className="flex flex-col pt-[calc(7.75rem+env(safe-area-inset-top))] lg:col-span-5 lg:justify-center lg:py-24 lg:pt-24"
+          className="flex shrink-0 flex-col pt-[calc(6.75rem+env(safe-area-inset-top))] lg:col-span-5 lg:justify-center lg:pt-24 lg:py-24"
           initial={reduced ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -40,7 +40,10 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <div className="relative min-h-[38vh] flex-1 lg:col-span-7 lg:min-h-[100svh]" />
+        <div
+          id="cake-hero-stage"
+          className="relative min-h-0 flex-1 lg:col-span-7 lg:min-h-[100svh]"
+        />
       </div>
     </section>
   );

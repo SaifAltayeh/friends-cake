@@ -31,15 +31,27 @@ export function desktopHeroPose(): CakePose {
 export function mobileHeroPose(): CakePose {
   return {
     x: 0,
-    y: -0.46,
+    y: -0.62,
     z: 0.08,
     rotX: 0.05,
     rotY: 0.32,
     rotZ: 0,
-    scale: 0.5,
+    scale: 0.42,
     idle: 0.85,
     opacity: 1,
   };
+}
+
+export function mobileHeroFromStage(rect: DOMRect): CakePose {
+  const next = poseFromProductStage(rect, {
+    fill: 0.7,
+    maxScale: 0.5,
+  });
+  next.rotX = 0.05;
+  next.rotY = 0.32;
+  next.rotZ = 0;
+  next.idle = 0.85;
+  return next;
 }
 
 export function desktopQuotePose(): CakePose {

@@ -12,6 +12,7 @@ import {
   desktopHeroPose,
   desktopQuotePose,
   mixPose,
+  mobileHeroFromStage,
   mobileHeroPose,
   mobileQuotePose,
   offscreenLeftPose,
@@ -106,6 +107,7 @@ function mobileTravelPose(
   promoStage: HTMLElement,
   sellers: HTMLElement,
   productStage: HTMLElement,
+  heroStage: HTMLElement | null,
 ) {
   const vh = window.innerHeight;
   const quoteY = pageY(quote);
@@ -114,6 +116,9 @@ function mobileTravelPose(
   const promoY = pageY(promo);
   const promoSlot = promoPose(promoStage.getBoundingClientRect(), true);
   const card = poseFromProductStage(productStage.getBoundingClientRect());
+  const start = heroStage
+    ? mobileHeroFromStage(heroStage.getBoundingClientRect())
+    : mobileHeroPose();
   const quotePose = mobileQuotePose();
   const catsOff = offscreenLeftPose(quotePose);
   const afterQuote = quoteY - vh * 0.2;
@@ -123,8 +128,8 @@ function mobileTravelPose(
   const returnStart = Math.min(featuredEnd - vh * 0.42, arriveAt - vh * 0.14);
   const holdAt = Math.max(arriveAt + 48, pageY(sellers) - vh * 0.7);
   return poseAlong(scrollY, [
-    [0, mobileHeroPose()],
-    [Math.max(0, quoteY - vh * 0.52), mobileHeroPose()],
+    [0, start],
+    [Math.max(0, quoteY - vh * 0.52), start],
     [afterQuote, quotePose],
     [leaveFrom, quotePose],
     [goneAt, catsOff],
@@ -179,6 +184,7 @@ export function CakeTheater() {
     const section = document.getElementById("best-sellers");
     const productStage = document.getElementById("cake-product-stage");
     const promoStage = document.getElementById("cake-promo-stage");
+    const heroStage = document.getElementById("cake-hero-stage");
     const stageEl = stage.current;
     if (
       !journey ||
@@ -196,7 +202,12 @@ export function CakeTheater() {
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const mobile = () => window.innerWidth < 1024;
-    const heroPose = () => (mobile() ? mobileHeroPose() : desktopHeroPose());
+    const heroPose = () =>
+      mobile()
+        ? heroStage
+          ? mobileHeroFromStage(heroStage.getBoundingClientRect())
+          : mobileHeroPose()
+        : desktopHeroPose();
     const travelPose = () =>
       mobile()
         ? mobileTravelPose(
@@ -208,6 +219,7 @@ export function CakeTheater() {
             promoStage,
             section,
             productStage,
+            heroStage,
           )
         : desktopTravelPose(
             window.scrollY,
