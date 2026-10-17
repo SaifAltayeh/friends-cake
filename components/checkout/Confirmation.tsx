@@ -16,9 +16,9 @@ export function Confirmation({ reference }: { reference: string }) {
   }, [reference]);
 
   return (
-    <div className="mx-auto max-w-xl border border-navy/10 bg-white px-8 py-14 text-center">
+    <div className="mx-auto max-w-xl border border-navy/10 bg-white px-5 py-10 text-center sm:px-8 sm:py-14">
       <p className="kicker">Demo confirmation</p>
-      <h1 className="mt-4 font-serif text-5xl text-navy">Order noted</h1>
+      <h1 className="mt-4 font-serif text-4xl text-navy md:text-5xl">Order noted</h1>
       <p className="mt-4 text-sm leading-relaxed text-ink-soft">
         Reference <strong className="text-navy">{reference}</strong>. {store.demoNotice}
       </p>
@@ -27,9 +27,9 @@ export function Confirmation({ reference }: { reference: string }) {
           {order.itemCount} items · estimated {formatPrice(order.estimatedTotal)}
         </p>
       ) : null}
-      <div className="mt-8 flex justify-center gap-3">
-        <ButtonLink href="/shop">Continue browsing</ButtonLink>
-        <ButtonLink href="/" variant="ghost">
+      <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <ButtonLink href="/shop" className="w-full sm:w-auto">Continue browsing</ButtonLink>
+        <ButtonLink href="/" variant="ghost" className="w-full sm:w-auto">
           Home
         </ButtonLink>
       </div>

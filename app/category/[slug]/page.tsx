@@ -30,7 +30,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
   const list = getProductsByCategory(slug);
 
   return (
-    <div className={`${siteWrap} pb-28 pt-8 md:pb-36 md:pt-12`}>
+    <div className={`${siteWrap} pb-20 pt-6 md:pb-36 md:pt-12`}>
       <Breadcrumbs
         items={[
           { href: "/", label: "Home" },
@@ -41,11 +41,11 @@ export default async function CategoryPage({ params }: { params: Params }) {
       <p className="mt-8 text-[0.68rem] tracking-[0.28em] uppercase text-ink-soft">
         {category.tagline}
       </p>
-      <h1 className="mt-4 font-serif text-5xl text-navy md:text-6xl">{category.name}</h1>
+      <h1 className="mt-3 font-serif text-4xl text-navy md:mt-4 md:text-6xl">{category.name}</h1>
       <div className="mt-10">
         <CategoryLinks active={category.slug} />
       </div>
-      <div className="mt-16 md:mt-20">
+      <div className="mt-10 md:mt-20">
         <ProductListing products={list} initialCategory={slug} showCategories={false} />
       </div>
     </div>

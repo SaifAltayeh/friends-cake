@@ -39,7 +39,7 @@ export function CartDrawer() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="cart-title"
-            className="fixed inset-y-0 right-0 z-[110] flex w-full max-w-md flex-col bg-white shadow-2xl"
+            className="fixed inset-y-0 right-0 z-[110] flex w-full max-w-md flex-col bg-white pt-[env(safe-area-inset-top)] shadow-2xl"
             initial={{ x: 24, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 24, opacity: 0 }}

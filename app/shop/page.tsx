@@ -32,7 +32,7 @@ const views = {
 
 export default function ShopPage({ searchParams }: { searchParams: Search }) {
   return (
-    <div className={`${siteWrap} pb-28 pt-8 md:pb-36 md:pt-12`}>
+    <div className={`${siteWrap} pb-20 pt-6 md:pb-36 md:pt-12`}>
       <Suspense fallback={<LoadingState label="Opening the catalogue" />}>
         <ShopContent searchParams={searchParams} />
       </Suspense>
@@ -54,12 +54,12 @@ async function ShopContent({ searchParams }: { searchParams: Search }) {
     <>
       <header>
         <p className="text-[0.68rem] tracking-[0.28em] uppercase text-ink-soft">{view.kicker}</p>
-        <div className="mt-4 flex flex-wrap items-end justify-between gap-8">
+        <div className="mt-3 flex flex-wrap items-end justify-between gap-5 md:mt-4 md:gap-8">
           <div className="max-w-xl">
-            <h1 className="font-serif text-5xl text-navy md:text-6xl">{view.title}</h1>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft md:text-base">{view.body}</p>
+            <h1 className="font-serif text-4xl text-navy md:text-6xl">{view.title}</h1>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft md:mt-4 md:text-base">{view.body}</p>
           </div>
-          <nav className="flex flex-wrap gap-6 text-sm" aria-label="Catalogue views">
+          <nav className="flex flex-wrap gap-4 text-sm md:gap-6" aria-label="Catalogue views">
             <ViewLink href="/shop" active={!collection}>
               All
             </ViewLink>
@@ -72,7 +72,7 @@ async function ShopContent({ searchParams }: { searchParams: Search }) {
           </nav>
         </div>
       </header>
-      <div className="mt-16 md:mt-20">
+      <div className="mt-10 md:mt-20">
         <ProductListing products={products} collection={collection} />
       </div>
     </>

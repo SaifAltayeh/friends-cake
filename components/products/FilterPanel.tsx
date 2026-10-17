@@ -35,7 +35,7 @@ export function FilterPanel({
     <div className="flex flex-col gap-5 border-y border-navy/10 py-5 lg:flex-row lg:items-center lg:justify-between">
       {showCategories ? (
         <nav
-          className="flex gap-6 overflow-x-auto text-sm whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="-mx-4 flex gap-5 overflow-x-auto px-4 text-sm whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:gap-6 sm:px-0"
           aria-label="Filter by collection"
         >
           <FilterLink active={category === "all"} onClick={() => onCategory("all")}>
@@ -57,7 +57,7 @@ export function FilterPanel({
         </p>
       )}
 
-      <div className="flex shrink-0 items-center gap-8 text-sm">
+      <div className="flex shrink-0 items-center justify-between gap-6 text-sm sm:gap-8">
         {showCategories ? (
           <p className="text-ink-soft">
             {count} {count === 1 ? "cake" : "cakes"}

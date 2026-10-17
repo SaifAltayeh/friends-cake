@@ -182,7 +182,7 @@ export function CheckoutForm() {
             onChange={(event) => set("notes", event.target.value)}
           />
         </FormField>
-        <Button type="submit">Place demo order</Button>
+        <Button type="submit" className="w-full sm:w-auto">Place demo order</Button>
       </div>
       <CartSummary subtotal={subtotal} total={total} withCheckout={false} />
     </form>

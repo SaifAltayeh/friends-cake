@@ -14,7 +14,7 @@ const shortName: Record<string, string> = {
 export function CategoryLinks({ active }: { active?: string }) {
   return (
     <nav
-      className="flex gap-6 overflow-x-auto text-sm whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      className="-mx-4 flex gap-5 overflow-x-auto px-4 text-sm whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:gap-6 sm:px-0"
       aria-label="Collections"
     >
       <Link

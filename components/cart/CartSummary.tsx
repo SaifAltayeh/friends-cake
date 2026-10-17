@@ -12,7 +12,7 @@ export function CartSummary({
   withCheckout?: boolean;
 }) {
   return (
-    <aside className="border border-navy/10 bg-white p-6">
+    <aside className="border border-navy/10 bg-white p-5 sm:p-6">
       <h2 className="font-serif text-2xl text-navy">Summary</h2>
       <dl className="mt-6 space-y-3 text-sm">
         <div className="flex justify-between">

@@ -33,10 +33,10 @@ export function FormField({
 }
 
 export const fieldClass =
-  "w-full border border-navy/15 bg-white px-4 py-3 text-sm outline-none transition-colors focus:border-navy";
+  "w-full min-w-0 border border-navy/15 bg-white px-4 py-3 text-base outline-none transition-colors focus:border-navy";
 
 export const fieldStudio =
-  "w-full border-0 bg-[#f7f7f7] px-4 py-3.5 text-sm outline-none transition-colors focus:bg-[#f0f0f0]";
+  "w-full min-w-0 border-0 bg-[#f7f7f7] px-4 py-3.5 text-base outline-none transition-colors focus:bg-[#f0f0f0]";
 
 type FieldVariant = { error?: string; variant?: "box" | "studio" };
 

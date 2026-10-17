@@ -30,7 +30,7 @@ export default async function ProductPage({ params }: { params: Params }) {
   const category = categories.find((item) => item.slug === product.category);
 
   return (
-    <div className={`${siteWrap} py-12 md:py-16`}>
+    <div className={`${siteWrap} py-8 md:py-16`}>
       <Breadcrumbs
         items={[
           { href: "/", label: "Home" },
@@ -42,7 +42,7 @@ export default async function ProductPage({ params }: { params: Params }) {
           { label: product.name },
         ]}
       />
-      <div className="mt-10">
+      <div className="mt-6 md:mt-10">
         <ProductDetails product={product} />
       </div>
       <RelatedProducts products={getRelatedProducts(product, 3)} />

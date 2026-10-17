@@ -17,7 +17,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         Skip to content
       </a>
       <RouteEffects />
-      <div className="pointer-events-auto fixed inset-x-0 top-0 z-[60]">
+      <div className="pointer-events-auto fixed inset-x-0 top-0 z-[60] pt-[env(safe-area-inset-top)]">
         <AnnouncementBar />
         <Header />
       </div>
@@ -27,7 +27,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <ToastStack />
       <main
         id="main-content"
-        className="flex-1 pt-28 has-[#cake-journey]:pt-0 has-[#page-hero]:pt-0"
+        className="flex-1 pt-[calc(7.25rem+env(safe-area-inset-top))] has-[#cake-journey]:pt-0 has-[#page-hero]:pt-0 sm:pt-28"
       >
         {children}
       </main>

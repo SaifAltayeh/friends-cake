@@ -19,7 +19,7 @@ export function ProductGallery({
 
   return (
     <div>
-      <div className={`relative aspect-[4/5] overflow-hidden ${modelPath ? "bg-transparent" : "bg-mist"}`}>
+      <div className={`relative aspect-square overflow-hidden sm:aspect-[4/5] ${modelPath ? "bg-transparent" : "bg-mist"}`}>
         {modelPath ? (
           <div className="absolute inset-0">
             <ProductModelPreview path={modelPath} />
@@ -36,7 +36,7 @@ export function ProductGallery({
         )}
       </div>
       {images.length > 1 ? (
-        <div className="mt-3 flex gap-2 overflow-x-auto">
+        <div className="mt-3 flex gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {images.map((image, index) => (
             <button
               key={image}

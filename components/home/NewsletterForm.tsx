@@ -38,7 +38,7 @@ export function NewsletterForm({ variant = "light" }: { variant?: "light" | "dar
         onChange={(event) => setEmail(event.target.value)}
         placeholder="Email address"
         className={cn(
-          "flex-1 border px-4 py-3 text-sm outline-none",
+          "min-w-0 flex-1 border px-4 py-3 text-base outline-none",
           variant === "dark"
             ? "border-white/20 bg-transparent text-ivory placeholder:text-slate"
             : "border-navy/15 bg-white",

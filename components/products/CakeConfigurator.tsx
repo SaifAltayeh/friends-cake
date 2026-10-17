@@ -216,9 +216,9 @@ export function CakeConfigurator({ product }: { product: Product }) {
         <p className="mt-1 text-xs text-ink-soft">Demo pricing rules. Replace when confirmed.</p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
         <QuantitySelector value={quantity} onChange={setQuantity} />
-        <Button onClick={add} className="flex-1 min-w-40">
+        <Button onClick={add} className="w-full min-w-0 sm:min-w-40 sm:flex-1">
           Add to cart
         </Button>
       </div>

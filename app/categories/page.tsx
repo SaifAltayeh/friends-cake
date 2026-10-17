@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 export default function CategoriesPage() {
   return (
-    <div className={`${siteWrap} py-12 md:py-16`}>
+    <div className={`${siteWrap} py-8 md:py-16`}>
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Categories" }]} />
-      <p className="kicker mt-8">The collections</p>
-      <h1 className="mt-3 font-serif text-5xl text-navy md:text-6xl">Categories</h1>
+      <p className="kicker mt-6 md:mt-8">The collections</p>
+      <h1 className="mt-3 font-serif text-4xl text-navy md:text-6xl">Categories</h1>
       <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink-soft">
         Editorial collections for the demo storefront. Replace imagery and names with the live
         Friends Cake catalogue.

@@ -31,12 +31,12 @@ export function desktopHeroPose(): CakePose {
 export function mobileHeroPose(): CakePose {
   return {
     x: 0,
-    y: -0.32,
+    y: -0.46,
     z: 0.08,
     rotX: 0.05,
     rotY: 0.32,
     rotZ: 0,
-    scale: 0.64,
+    scale: 0.5,
     idle: 0.85,
     opacity: 1,
   };
@@ -186,12 +186,12 @@ export function desktopPromoPose(): CakePose {
 export function mobileQuotePose(): CakePose {
   return {
     x: 0,
-    y: 0.02,
+    y: -0.02,
     z: 0.08,
     rotX: 0.04,
     rotY: 0.72,
     rotZ: 0,
-    scale: 0.52,
+    scale: 0.42,
     idle: 0.38,
     opacity: 1,
   };

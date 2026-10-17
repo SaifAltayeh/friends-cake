@@ -7,7 +7,7 @@ import { siteWrap } from "@/lib/cn";
 export function Footer() {
   return (
     <footer className="border-t border-navy/10 bg-white text-navy">
-      <div className={`${siteWrap} grid gap-12 py-20 md:grid-cols-12 md:py-24`}>
+      <div className={`${siteWrap} grid gap-10 py-14 md:grid-cols-12 md:gap-12 md:py-24`}>
         <div className="md:col-span-4">
           <Link href="/" className="inline-flex items-center gap-3">
             <span className="relative block h-11 w-11 overflow-hidden bg-navy">

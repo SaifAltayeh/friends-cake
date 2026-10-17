@@ -5,9 +5,9 @@ export const metadata: Metadata = { title: "Privacy Policy" };
 
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 lg:px-12">
+    <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-8 sm:py-16 lg:px-12">
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Privacy Policy" }]} />
-      <h1 className="mt-8 font-serif text-5xl text-navy">Privacy Policy</h1>
+      <h1 className="mt-6 font-serif text-4xl text-navy md:mt-8 md:text-5xl">Privacy Policy</h1>
       <div className="mt-6 space-y-4 text-sm leading-relaxed text-ink-soft">
         <p>
           This is placeholder legal copy for the Friends Cake demo storefront. It is not a live

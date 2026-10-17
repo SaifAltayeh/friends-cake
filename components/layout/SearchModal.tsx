@@ -112,7 +112,7 @@ export function SearchModal() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="search-title"
-            className="relative z-10 mx-auto mt-20 w-[min(44rem,calc(100%-1.5rem))] bg-white px-5 py-6 ring-1 ring-navy/10 sm:px-8 sm:py-7 md:mt-28"
+            className="relative z-10 mx-auto mt-[calc(5.25rem+env(safe-area-inset-top))] w-[min(44rem,calc(100%-1rem))] bg-white px-4 py-5 ring-1 ring-navy/10 sm:mt-20 sm:px-8 sm:py-7 md:mt-28"
             initial={{ y: 12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 12, opacity: 0 }}
@@ -124,7 +124,7 @@ export function SearchModal() {
                 <p className="text-[0.68rem] tracking-[0.28em] uppercase text-ink-soft">
                   The catalogue
                 </p>
-                <h2 id="search-title" className="mt-1.5 font-serif text-3xl text-navy md:text-4xl">
+                <h2 id="search-title" className="mt-1.5 font-serif text-[1.85rem] text-navy md:text-4xl">
                   Search
                 </h2>
               </div>
@@ -168,7 +168,7 @@ export function SearchModal() {
 
             <ul
               id="search-results"
-              className="mt-3 max-h-[min(28rem,calc(100vh-22rem))] space-y-1 overflow-y-auto overscroll-contain"
+              className="mt-3 max-h-[min(28rem,calc(100svh-20rem))] space-y-1 overflow-y-auto overscroll-contain"
             >
               {results.length === 0 ? (
                 <li className="py-8 text-sm text-ink-soft">

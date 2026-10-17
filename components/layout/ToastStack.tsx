@@ -7,7 +7,7 @@ export function ToastStack() {
   const { toasts } = useUI();
 
   return (
-    <div className="pointer-events-none fixed bottom-6 right-6 z-[80] space-y-2">
+    <div className="pointer-events-none fixed inset-x-4 bottom-[calc(1.25rem+env(safe-area-inset-bottom))] z-[80] space-y-2 sm:inset-x-auto sm:right-6 sm:bottom-6">
       <AnimatePresence>
         {toasts.map((toast) => (
           <motion.div

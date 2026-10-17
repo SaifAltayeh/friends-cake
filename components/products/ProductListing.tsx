@@ -70,11 +70,11 @@ export function ProductListing({
         </div>
       ) : (
         <>
-          <div className="mt-16 md:mt-20">
+          <div className="mt-10 md:mt-20">
             <ProductGrid products={shown} />
           </div>
           {visible < filtered.length ? (
-            <div className="mt-20 text-center">
+            <div className="mt-12 text-center md:mt-20">
               <button
                 type="button"
                 onClick={() => setVisible((count) => count + PAGE)}

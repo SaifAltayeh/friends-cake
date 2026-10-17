@@ -7,12 +7,12 @@ export const metadata: Metadata = { title: "Frenchies Request" };
 
 export default function FrenchiesPage() {
   return (
-    <div className={`${siteWrap} pb-28 pt-8 md:pb-36 md:pt-12`}>
+    <div className={`${siteWrap} pb-20 pt-6 md:pb-36 md:pt-12`}>
       <header className="max-w-3xl">
         <p className="text-[0.68rem] tracking-[0.28em] uppercase text-ink-soft">
           {frenchiesContent.kicker}
         </p>
-        <h1 className="mt-4 font-serif text-5xl leading-[1.08] text-navy md:text-6xl">
+        <h1 className="mt-3 font-serif text-4xl leading-[1.1] text-navy md:mt-4 md:text-6xl md:leading-[1.08]">
           Frenchies Request
         </h1>
         <p className="mt-6 max-w-md text-sm leading-relaxed text-ink-soft md:text-base">
@@ -20,7 +20,7 @@ export default function FrenchiesPage() {
         </p>
       </header>
 
-      <div className="mt-16 max-w-3xl md:mt-20">
+      <div className="mt-10 max-w-3xl md:mt-20">
         <FrenchiesForm />
       </div>
     </div>

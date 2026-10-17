@@ -34,7 +34,7 @@ export function ProductCard({
               alt={product.name}
               fill
               sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
-              className="object-contain p-8 transition-transform duration-700 group-hover:scale-[1.03] md:p-10"
+              className="object-contain p-5 transition-transform duration-700 group-hover:scale-[1.03] md:p-10"
             />
           )}
           <div
@@ -42,7 +42,7 @@ export function ProductCard({
             className="pointer-events-none absolute inset-x-[18%] bottom-[10%] h-5 rounded-[100%] bg-black/[0.07] blur-md"
           />
         </div>
-        <p className="mt-8 text-[0.95rem] font-normal tracking-[-0.01em] text-ink">
+        <p className="mt-5 text-[0.95rem] font-normal tracking-[-0.01em] text-ink md:mt-8">
           {product.name}
         </p>
         <PriceDisplay amount={product.price} className="mt-1.5 block text-[0.9rem] text-ink" />

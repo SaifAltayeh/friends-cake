@@ -13,7 +13,7 @@ type Search = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export default function CheckoutPage({ searchParams }: { searchParams: Search }) {
   return (
-    <div className={`${siteWrap} py-12 md:py-16`}>
+    <div className={`${siteWrap} py-8 md:py-16`}>
       <Suspense fallback={<LoadingState label="Preparing checkout" />}>
         <CheckoutContent searchParams={searchParams} />
       </Suspense>
@@ -40,7 +40,7 @@ async function CheckoutContent({ searchParams }: { searchParams: Search }) {
         </div>
       ) : (
         <>
-          <h1 className="mt-8 font-serif text-5xl text-navy">Checkout</h1>
+          <h1 className="mt-6 font-serif text-4xl text-navy md:mt-8 md:text-5xl">Checkout</h1>
           <p className="mt-3 max-w-xl text-sm text-ink-soft">{store.demoNotice}</p>
           <div className="mt-10">
             <CheckoutForm />

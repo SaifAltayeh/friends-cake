@@ -16,9 +16,9 @@ export function Header() {
 
   return (
     <header className="bg-ivory/95 backdrop-blur-md">
-      <div className={`${siteWrap} flex items-center justify-between gap-4 py-4`}>
-        <Link href="/" className="flex items-center gap-3" aria-label="Friends Cake home">
-          <span className="relative block h-11 w-11 overflow-hidden bg-navy">
+      <div className={`${siteWrap} flex items-center justify-between gap-2 py-3 sm:gap-4 sm:py-4`}>
+        <Link href="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3" aria-label="Friends Cake home">
+          <span className="relative block h-10 w-10 shrink-0 overflow-hidden bg-navy sm:h-11 sm:w-11">
             <Image
               src="/brand/logo-plate.png"
               alt=""
@@ -28,7 +28,7 @@ export function Header() {
               priority
             />
           </span>
-          <span className="hidden font-serif text-[1.35rem] tracking-[0.06em] text-navy sm:block">
+          <span className="hidden font-serif text-[1.15rem] tracking-[0.04em] text-navy sm:block sm:text-[1.35rem] sm:tracking-[0.06em]">
             Friends Cake
           </span>
         </Link>
@@ -56,21 +56,21 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center text-navy">
+        <div className="flex shrink-0 items-center text-navy">
           <button
             type="button"
-            className="grid h-11 w-11 place-items-center"
+            className="grid h-10 w-10 place-items-center sm:h-11 sm:w-11"
             aria-label="Search cakes"
             onClick={openSearch}
           >
             <Search size={18} />
           </button>
-          <Link href="/account" className="grid h-11 w-11 place-items-center" aria-label="Account">
+          <Link href="/account" className="grid h-10 w-10 place-items-center sm:h-11 sm:w-11" aria-label="Account">
             <User size={18} />
           </Link>
           <Link
             href="/cart"
-            className="relative grid h-11 w-11 place-items-center"
+            className="relative grid h-10 w-10 place-items-center sm:h-11 sm:w-11"
             aria-label={`Cart, ${count} items`}
           >
             <ShoppingBag size={18} />
@@ -82,7 +82,7 @@ export function Header() {
           </Link>
           <button
             type="button"
-            className="grid h-11 w-11 place-items-center xl:hidden"
+            className="grid h-10 w-10 place-items-center sm:h-11 sm:w-11 xl:hidden"
             aria-label="Open menu"
             onClick={openMenu}
           >

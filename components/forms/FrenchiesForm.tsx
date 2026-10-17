@@ -126,7 +126,7 @@ export function FrenchiesForm() {
           onChange={(e) => setValues({ ...values, details: e.target.value })}
         />
       </FormField>
-      <Button type="submit">Send request</Button>
+      <Button type="submit" className="w-full sm:w-auto">Send request</Button>
     </form>
   );
 }

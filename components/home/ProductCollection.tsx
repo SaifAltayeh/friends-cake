@@ -30,23 +30,23 @@ export function ProductCollection({
     <section
       id={id}
       className={cn(
-        "relative overflow-x-hidden bg-white py-24 md:py-28",
+        "relative overflow-x-hidden bg-white py-16 md:py-28",
         cakeBehind ? "" : "z-10",
         className,
       )}
     >
       <div className={cn(siteWrap, cakeBehind && "relative z-30")}>
-        <div className="flex flex-wrap items-end justify-between gap-8">
+        <div className="flex flex-wrap items-end justify-between gap-5 md:gap-8">
           <div className="max-w-xl">
             <p className="text-[0.68rem] tracking-[0.28em] uppercase text-ink-soft">{kicker}</p>
-            <h2 className="mt-4 font-serif text-5xl text-navy md:text-6xl">{title}</h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft md:text-base">{body}</p>
+            <h2 className="mt-3 font-serif text-4xl text-navy md:mt-4 md:text-6xl">{title}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft md:mt-4 md:text-base">{body}</p>
           </div>
-          <ButtonLink href={href} variant="ghost">
+          <ButtonLink href={href} variant="ghost" className="w-full sm:w-auto">
             {action}
           </ButtonLink>
         </div>
-        <div className="relative mt-20">
+        <div className="relative mt-10 md:mt-20">
           {cakeBehind ? (
             <div
               aria-hidden
@@ -55,7 +55,7 @@ export function ProductCollection({
           ) : null}
           <div
             className={cn(
-              "relative grid gap-x-12 gap-y-20 sm:grid-cols-2 md:gap-x-20",
+              "relative grid gap-x-6 gap-y-12 sm:grid-cols-2 md:gap-x-20 md:gap-y-20",
               products.length === 3 ? "lg:grid-cols-3" : "xl:grid-cols-4",
             )}
           >

@@ -12,14 +12,14 @@ export function CartItemRow({ item }: { item: CartItem }) {
   const config = item.configuration;
 
   return (
-    <article className="flex gap-4 border-b border-navy/10 py-5">
-      <Link href={`/product/${item.slug}`} className="relative h-24 w-20 shrink-0 overflow-hidden bg-mist">
+    <article className="flex gap-3 border-b border-navy/10 py-5 sm:gap-4">
+      <Link href={`/product/${item.slug}`} className="relative h-20 w-16 shrink-0 overflow-hidden bg-mist sm:h-24 sm:w-20">
         <Image src={item.image} alt={item.name} fill className="object-cover" />
       </Link>
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <Link href={`/product/${item.slug}`} className="font-serif text-xl text-navy">
+            <Link href={`/product/${item.slug}`} className="font-serif text-lg text-navy sm:text-xl">
               {item.name}
             </Link>
             {config ? (

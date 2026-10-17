@@ -14,7 +14,7 @@ export function SectionHeading({
   return (
     <div className={cn(align === "center" && "text-center mx-auto max-w-2xl")}>
       {kicker ? <p className="kicker mb-4">{kicker}</p> : null}
-      <h2 className="font-serif text-4xl text-navy md:text-5xl">{title}</h2>
+      <h2 className="font-serif text-[2rem] text-navy md:text-5xl">{title}</h2>
       {body ? (
         <p
           className={cn(

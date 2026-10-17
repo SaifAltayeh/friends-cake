@@ -132,7 +132,7 @@ export function B2BForm() {
           onChange={(e) => setValues({ ...values, requirements: e.target.value })}
         />
       </FormField>
-      <Button type="submit">Send inquiry</Button>
+      <Button type="submit" className="w-full sm:w-auto">Send inquiry</Button>
     </form>
   );
 }

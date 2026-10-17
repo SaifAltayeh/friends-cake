@@ -39,6 +39,11 @@ html,
 body {
   background: #ffffff;
   color: var(--ink);
+  max-width: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {

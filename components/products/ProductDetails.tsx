@@ -12,7 +12,7 @@ export function ProductDetails({ product }: { product: Product }) {
       <ProductGallery images={product.images} name={product.name} modelPath={product.modelPath} />
       <div>
         <p className="kicker">{product.badge ?? "Friends Cake"}</p>
-        <h1 className="mt-3 font-serif text-5xl text-navy">{product.name}</h1>
+        <h1 className="mt-3 font-serif text-4xl text-navy md:text-5xl">{product.name}</h1>
         <p className="mt-4 text-sm leading-relaxed text-ink-soft">{product.description}</p>
         <p className="mt-4 text-xs text-ink-soft">
           {formatAvailability(product.availability)} · {store.currencyNote}

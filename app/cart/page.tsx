@@ -12,9 +12,9 @@ export default function CartPage() {
   const { items, subtotal, total, clear } = useCart();
 
   return (
-    <div className={`${siteWrap} py-12 md:py-16`}>
+    <div className={`${siteWrap} py-8 md:py-16`}>
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Cart" }]} />
-      <h1 className="mt-8 font-serif text-5xl text-navy">Cart</h1>
+      <h1 className="mt-6 font-serif text-4xl text-navy md:mt-8 md:text-5xl">Cart</h1>
       {items.length === 0 ? (
         <div className="mt-10">
           <EmptyState
@@ -25,12 +25,12 @@ export default function CartPage() {
           />
         </div>
       ) : (
-        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_320px]">
+        <div className="mt-8 grid gap-8 md:mt-10 lg:grid-cols-[1fr_320px]">
           <div>
             {items.map((item) => (
               <CartItemRow key={item.lineId} item={item} />
             ))}
-            <Button variant="ghost" className="mt-6" onClick={clear}>
+            <Button variant="ghost" className="mt-6 w-full sm:w-auto" onClick={clear}>
               Clear cart
             </Button>
           </div>
