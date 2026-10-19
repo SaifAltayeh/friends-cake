@@ -53,7 +53,7 @@ export const footerNav = {
   atelier: [
     { href: "/frenchies-request", label: "Frenchies Request" },
     { href: "/b2b", label: "B2B inquiries" },
-    { href: "/product/atelier-ombre", label: "Create your cake" },
+    { href: "/create-your-cake", label: "Create your cake" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },

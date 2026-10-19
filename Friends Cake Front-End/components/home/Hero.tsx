@@ -34,7 +34,7 @@ export function Hero() {
             <ButtonLink href="/shop" className="w-full sm:w-auto">
               Explore our cakes
             </ButtonLink>
-            <ButtonLink href="/product/lotus-crumb" variant="ghost" className="w-full sm:w-auto">
+            <ButtonLink href="/create-your-cake" variant="ghost" className="w-full sm:w-auto">
               Create your cake
             </ButtonLink>
           </div>
